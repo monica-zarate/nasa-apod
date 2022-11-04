@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APOD - API Request</title>
+  </head>
+  <body>
+    <div id="loading"></div>
+    <h1>Astronomy Picture of the Day</h1>
+    <div>
+      <h2>This month's APOD</h2>
+      <div id="thumbs"></div>
+    </div>
+    <div>
+      <h2>Find a specific APOD</h2>
+      <form action="">
+        <label for="day"></label>
+        <input type="date" name="day" id="day" min="1995-06-16" max="" />
+        <button>Request image</button>
+      </form>
+      <button onclick="getPictures()">Aqui?</button>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
