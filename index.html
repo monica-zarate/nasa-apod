@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>APOD - API Request</title>
   </head>
-  <body>
+  <body onload="getMonthPics()">
     <div id="loading"></div>
     <h1>Astronomy Picture of the Day</h1>
     <div>
@@ -16,11 +16,16 @@
     <div>
       <h2>Find a specific APOD</h2>
       <form action="">
-        <label for="day"></label>
-        <input type="date" name="day" id="day" min="1995-06-16" max="" />
-        <button>Request image</button>
+        <label for="date-input"></label>
+        <input
+          type="date"
+          name="date-input"
+          id="date-input"
+          min="1995-06-16"
+          max=""
+        />
       </form>
-      <button onclick="getPictures()">Aqui?</button>
+      <button id="btn">Aqui?</button>
     </div>
     <script src="js/main.js"></script>
   </body>
