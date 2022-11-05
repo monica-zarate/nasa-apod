@@ -23,10 +23,10 @@ let getMonthPics = () => {
     .catch((e) => {
       console.log(e);
     })
-    .finally(
-      // Close the spinner
-      loading.classList.remove("loading")
-    );
+    .finally(() => {
+      loading.classList.remove("loading");
+    });
+  // Close the spinner
 };
 
 let displayPictures = (data) => {
@@ -47,9 +47,9 @@ let displayPictures = (data) => {
     let picsArr = data
       .map((pic) => {
         mediaType(pic);
-        return `<div class="thumb"><div class="details"><h3>Date:</h3>
+        return `<div class="flex-c thumb"><div class="details"><h3>Date:</h3>
         <p>${pic.date}</p></div><div class="details"><h3>Title:</h3><p>${pic.title}</p></div><img src="${imgUrl}" alt="" />
-        <h3>Explanation</h3>
+        <h3>Explanation:</h3>
         <p>${pic.explanation}</p></div>`;
       })
       .join("");
@@ -59,9 +59,9 @@ let displayPictures = (data) => {
     thumbsDiv.innerHTML = "";
     let picObj = data;
     mediaType(data);
-    let picContainer = `<div class="thumb"><div class="details"><h3>Date:</h3>
+    let picContainer = `<div class="flex-c thumb"><div class="details"><h3>Date:</h3>
         <p>${picObj.date}</p></div><div class="details"><h3>Title:</h3><p>${picObj.title}</p></div><img src="${imgUrl}" alt="" />
-        <h3>Explanation</h3>
+        <h3>Explanation:</h3>
         <p>${picObj.explanation}</p></div>`;
     thumbsDiv.innerHTML = picContainer;
   }
@@ -72,12 +72,11 @@ let dateInput = document.querySelector("#date-input");
 dateInput.setAttribute("max", today);
 dateInput.setAttribute("value", today);
 
-let getSelectedDate = dateInput.addEventListener("change", () => {
-  selectedDate = dateInput.value;
-});
-
 let getPicture = () => {
   // Add the spinner to the DOM
+  loading.classList.add("loading");
+
+  selectedDate = dateInput.value;
 
   fetch(`${apiURL}?api_key=${apiKey}&date=${selectedDate}&thumbs=true`)
     .then((response) => response.json())
@@ -88,9 +87,12 @@ let getPicture = () => {
     .catch((e) => {
       console.log(e);
     })
-    .finally
-    // Close the spinner
-    ();
+    .finally(
+      // Close the spinner
+      () => {
+        loading.classList.remove("loading");
+      }
+    );
 };
 
 let singleRequestBtn = document.querySelector("#single");

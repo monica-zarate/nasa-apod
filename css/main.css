@@ -14,7 +14,6 @@
 
 body {
     background-color: #94d2bd4c;
-    /* background-color: #94D2BD; */
     font-size: 16px;
     padding: 3vmin 12vmin 6vmin;
     font-family: 'Raleway', sans-serif;
@@ -29,6 +28,7 @@ body {
 
 h1 {
     font-size: 6vmin;
+    text-align: center;
 }
 
 h3 {
@@ -38,6 +38,7 @@ h3 {
 p {
     letter-spacing: 0.75px;
     line-height: 1.75;
+    text-align: justify;
 }
 
 .nasa {
@@ -102,9 +103,10 @@ h1, h3, .nasa {
 }
 
 .thumb {
+    align-items: baseline;
     background-color: white;
-    width: 500px;
-    padding: 3vmin;
+    width: 50vmin;
+    padding: 4vmin;
     border-radius: 10px;
     margin: 1.5vmin;
 }
@@ -119,7 +121,7 @@ h1, h3, .nasa {
 }
 
 .thumb img {
-    width: 400px;
+    max-width: 42vmin;
     height: auto;
     margin: 3vmin 0;
 }
@@ -146,15 +148,84 @@ h1, h3, .nasa {
     bottom: 0;
     right: 0;
     background: url('../imgs/venus.png') center;
+    -webkit-animation: pulsate 1.5s ease-in-out 2 both;
+    animation: pulsate 1.5s ease-in-out 2 both;
 }
 
-.loading:before {
-    content: '';
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-  }
+@-webkit-keyframes pulsate {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    10% {
+        -webkit-transform: scale(0.91);
+        transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    17% {
+        -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    33% {
+        -webkit-transform: scale(0.87);
+        transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    45% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+}
+
+@keyframes pulsate {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    10% {
+        -webkit-transform: scale(0.91);
+        transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    17% {
+        -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    33% {
+        -webkit-transform: scale(0.87);
+        transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    45% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+}
