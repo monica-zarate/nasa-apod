@@ -5,28 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>APOD - API Request</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quantico&family=Raleway:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body onload="getMonthPics()">
+  <body class="flex-c">
     <div id="loading"></div>
-    <h1>Astronomy Picture of the Day</h1>
-    <div>
-      <h2>This month's APOD</h2>
-      <div id="thumbs"></div>
+    <div class="flex-c heading">
+      <span class="nasa">NASA</span>
+      <h1>Astronomy Picture of the Day</h1>
     </div>
-    <div>
-      <h2>Find a specific APOD</h2>
-      <form action="">
-        <label for="date-input"></label>
+    <div class="flex-c ctas-wrapper">
+      <div class="flex-c cta">
+        <h2>This month's</h2>
+        <button id="month" class="btn">See pictures</button>
+      </div>
+      <div class="flex-c cta">
+        <h2>Specific date:</h2>
         <input
           type="date"
           name="date-input"
           id="date-input"
           min="1995-06-16"
-          max=""
+          class="date-input"
         />
-      </form>
-      <button id="btn">Aqui?</button>
+        <button id="single" class="btn">Find</button>
+      </div>
     </div>
+    <div id="thumbs" class="flex-c thumbs-wrapper"></div>
+    <footer class="flex-c footer">
+      <a
+        href="https://github.com/nasa/apod-api"
+        title="NASA's APOD API Documentation"
+        target="_blank"
+        >NASA's APOD API Documentation</a
+      >
+      <p>Website built by Monica Zarate. For educational purposes only.</p>
+    </footer>
     <script src="js/main.js"></script>
   </body>
 </html>
