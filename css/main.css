@@ -126,6 +126,14 @@ h1, h3, .nasa {
     margin: 3vmin 0;
 }
 
+.not-found {
+    align-items: center;
+}
+
+.not-found ul {
+    margin-bottom: 1.5vmin;
+}
+
 .footer {
     padding: 3vmin 3vmin 0;
     border-top: 2px solid #005F73;

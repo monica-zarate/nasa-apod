@@ -37,6 +37,35 @@
       </div>
     </div>
     <div id="thumbs" class="flex-c thumbs-wrapper"></div>
+    <template id="thumb">
+      <div class="flex-c thumb">
+        <div class="details">
+          <h3>Date:</h3>
+          <p id="date"></p>
+        </div>
+        <div class="details">
+          <h3>Title:</h3>
+          <p id="title"></p>
+        </div>
+        <img src="" alt="" id="img" />
+        <h3>Explanation:</h3>
+        <p id="expl"></p>
+      </div>
+    </template>
+    <template id="not-found">
+      <div class="flex-c thumb not-found">
+        <h3>SORRY! Something wen't wrong:</h3>
+        <ul>
+          <li>Today's Picture is not up yet, or</li>
+          <li>You've entered an invalid date</li>
+        </ul>
+        <p>Try another date!</p>
+        <img
+          src="https://media.giphy.com/media/GDnomdqpSHlIs/giphy.gif"
+          alt="dr house oops gif"
+        />
+      </div>
+    </template>
     <footer class="flex-c footer">
       <a
         href="https://github.com/nasa/apod-api"
