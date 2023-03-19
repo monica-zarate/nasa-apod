@@ -8,6 +8,7 @@
 const apiKey = "8SwsfpAgMhBu45ikVWZDANcFdUQJSXVyrwmhNjss";
 const apiURL = "https://api.nasa.gov/planetary/apod";
 
+let thisYear = new Date().getFullYear();
 let thisMonth = new Date().getMonth() + 1;
 let today = new Date().toISOString().slice(0, 10);
 
@@ -50,7 +51,7 @@ let getMonthPics = () => {
   loading.classList.add("loading");
 
   fetch(
-    `${apiURL}?api_key=${apiKey}&start_date=2022-${thisMonth}-01&thumbs=true`
+    `${apiURL}?api_key=${apiKey}&start_date=${thisYear}-${thisMonth}-01&thumbs=true`
   )
     .then((response) => response.json())
     .then((data) => {
